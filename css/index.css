@@ -1,0 +1,364 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "MicrosoftYahei", STXihei, hei;
+    color: #000;
+    background: #fafafc;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+div {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-index {
+    display: flex;
+    /* 固定定位跟父级没有关系，之和屏幕有关系。 */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    /* 固定的盒子需要宽度 */
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    height: 44px;
+    -webkit-transform: translateX(-50%);
+    -webkit-box-align: center;
+    transform: translateX(-50%);
+    align-items: center;
+    padding-left: 12px;
+}
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 28px;
+    line-height: 24px;
+    border-radius: 15px;
+    padding: 2px 5px;
+    background: #fff;
+    color: #666;
+    font-size: .94rem;
+    -webkit-box-flex: 1;
+}
+
+.search span {
+    padding-left: 35px;
+}
+
+.search span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100%;
+    background: url(../images/sprite.png) no-repeat 15px 7px;
+    background-size: 21px auto;
+
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    width: 51px;
+    height: 44px;
+    color: #fff;
+    font-size: .75rem;
+    line-height: 1;
+    box-sizing: border-box;
+    padding-right: 4px;
+
+}
+
+.user::before {
+    content: "\0020";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(../images/sprite.png) no-repeat 1px -35px;
+    background-size: 21px;
+}
+
+.focus {
+    z-index: 1;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/* 局部导航栏 */
+.local-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: -52px 12px 10px;
+    padding: 4px 0 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .8);
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .75rem;
+    line-height: 1;
+    color: #222;
+}
+
+.local-nav li [class^="icon-"] {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: url(../images/icons.png) no-repeat 0 0;
+    background-size: 40px auto;
+}
+
+.local-nav li .icon-ticktes {
+    background-position: 0 -40px;
+}
+
+.local-nav li .icon-food {
+    background-position: 0 -80px;
+}
+
+.local-nav li .icon-local {
+    background-position: 0 -120px;
+}
+
+.local-nav li .icon-oneday {
+    background-position: 0 -160px;
+}
+
+.grid-nav {
+    border-radius: 8px;
+    margin: 0 12px 1px;
+    overflow: hidden;
+}
+
+.grid-nav-comon {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-family: PingFangSC-Medium, Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+}
+
+.grid-nav-items {
+    border-left: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    color: #fff;
+    flex: 0 1 23%;
+    padding: 1.6rem 0;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 14px;
+    line-height: 1;
+    width: 23%;
+}
+
+.grid-nav-hotel {
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to right, #fa5956, #fb8650 54%);
+}
+
+.grid-nav-flight {
+    background: linear-gradient(to right, #4b8fed, #53bced);
+}
+
+.grid-nav-travel {
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(to right, #34c2aa, #6cd557);
+    border-bottom: 0;
+}
+
+.grid-nav-items-hotel {
+    background-image: url(../upload/hotel.png);
+    background-repeat: no-repeat;
+    background-size: 73px auto;
+}
+
+.grid-nav-items-flight {
+    background-image: url(../upload/flight.png);
+    background-repeat: no-repeat;
+    background-size: 79px auto;
+}
+
+.grid-nav-comon .grid-nav-items:first-child {
+    padding-left: 12px;
+    flex: 0 1 31%;
+    justify-content: flex-start;
+    background-position: right bottom;
+    width: 31%;
+}
+
+.grid-nav-items-misu {
+    background-image: url(../upload/minsu.png);
+    background-size: 37px auto;
+}
+
+.grid-nav-items-train {
+    background-image: url(../upload/train.png);
+    background-size: 37px auto;
+}
+
+.grid-nav-items-travel {
+    background-image: url(../upload/travel.png);
+    background-size: 94px auto;
+}
+
+.grid-nav-items-gaotie {
+    background-image: url(../upload/gaotie.png);
+    background-size: 61px auto;
+
+}
+
+.grid-nav-items-jhj {
+    flex: 0 1 46%;
+    background: linear-gradient(to right, #ffbc49, #ffd252);
+    padding: 0;
+    width: 46%;
+}
+
+.grid-nav-jhj {
+    position: relative;
+    display: block;
+    padding: 1.6rem 0;
+    width: 100%;
+    background: url(../upload/jhj.png) right bottom no-repeat;
+    background-size: 100% auto;
+    color: #a05416;
+    text-align: center;
+}
+
+.sub-nav {
+    margin: 0 12px 12px;
+    overflow: hidden;
+}
+
+.sub-nav li {
+    width: 20%;
+    float: left;
+}
+
+.sub-nav li a {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: .63rem;
+    color: #222;
+}
+
+.sub-nav li [class^="sub-nav-icon"] {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-top: .64rem;
+    margin-bottom: .32rem;
+    background-image: url(../images/sub_nav_icons.png);
+    background-repeat: no-repeat;
+    background-size: 28px auto;
+}
+
+.sub-nav li a .sub-nav-icon2 {
+    background-position: 0 -28px;
+}
+
+.sub-nav li a .sub-nav-icon3 {
+    background-position: 0 -28px;
+}
+
+.sub-nav li a .sub-nav-icon4 {
+    background-position: 0 -56px;
+}
+
+.sub-nav li a .sub-nav-icon5 {
+    background-position: 0 -84px;
+}
+
+.sub-nav li a .sub-nav-icon6 {
+    background-position: 0 -112px;
+}
+
+.sub-nav li a .sub-nav-icon7 {
+    background-position: 0 -140px;
+}
+
+.sub-nav li a .sub-nav-icon8 {
+    background-position: 0 -168px;
+}
+
+.sub-nav li a .sub-nav-icon9 {
+    background-position: 0 -196px;
+}
+
+.sub-nav li a .sub-nav-icon10 {
+    background-position: 0 -224px;
+}
+
+/* 工具栏模块 */
+.tool-box {
+    display: block;
+    padding-bottom: 5px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.tools {
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-bottom: 1px solid #c2c2c2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tools a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tools a [class^="svg"] {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
